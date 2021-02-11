@@ -1,0 +1,156 @@
+$table-boder-color: #000;
+
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main-wrapper {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+header {
+  display: block;
+  padding: 15px 0;
+  text-align: left;
+  img {
+    display: inline-block;
+  }
+}
+
+.table {
+  width: 100%;
+  display: table;
+  border: 1px solid $table-boder-color;
+  border-width: 2px 0;
+  margin-bottom: 20px;
+  @media (max-width: 767px) {
+    border: 0;
+  }
+  &-footer,
+  &-header,
+  &-body {
+    display: table-row-group;
+  }
+  &-header {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  &-row {
+    display: table-row;
+    border-radius: 5px;
+    overflow: hidden;
+    @media (max-width: 767px) {
+      display: block;
+      border: 1px solid #ddd;
+      border-width: 1px 1px 5px;
+      margin-bottom: 10px;
+    }
+    &.total {
+      .table-head {
+        padding: 15px 8px;
+        border-top: 1px solid $table-boder-color;
+        @media (max-width: 767px) {
+          padding: 10px 8px;
+          border: 1px solid #ddd;
+          border-width: 1px 1px 5px;
+        }
+      }
+    }
+  }
+  &-head,
+  &-col {
+    padding: 15px 8px;
+    display: table-cell;
+    border-bottom: 1px solid $table-boder-color;
+    vertical-align: middle;
+    @media (max-width: 767px) {
+      display: block;
+      border-bottom: 0;
+      &::before {
+        content: attr(data-label);
+        display: inline-block;
+        font-weight: bold;
+        padding-right: 5px;
+      }
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+  &-head {
+    font-weight: bold;
+  }
+  &-footer {
+    .table-col {
+      border-bottom: 0;
+      padding: 5px 8px;
+      @media (max-width: 767px) {
+        display: table-cell;
+      }
+    }    
+    @media (max-width: 767px) {
+      display: block;
+      border: 1px solid #ddd;
+      border-width: 1px 1px 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      .table-row {
+        border: 0;
+        margin-bottom: 0;
+        display: table-row;
+        .table-head {
+          display: table-cell;
+          border: 0;
+        }
+      }
+    }
+  }
+  label {
+    display: block;
+    &.name {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  }
+  button {
+    padding: 0;
+    border: 0;
+    background: none transparent;
+    cursor: pointer;
+    @media (max-width: 767px) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  select {
+    margin-top: 10px;
+    padding: 5px;
+  }
+}
+.text-right {
+  text-align: right;
+}
+.btn {
+  border: 0;
+  background-color: #cb4e4e;
+  color: #fff;
+  padding: 15px 25px;
+  float: right;
+  &:disabled {
+    background-color: #dadada;
+  }
+}
+footer {
+  clear: both;
+  font-size: 12px;
+  padding: 30px 15px;
+}
